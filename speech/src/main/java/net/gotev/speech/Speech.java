@@ -273,6 +273,10 @@ public class Speech {
         return instance;
     }
 
+    public static boolean isInitialized() {
+        return instance != null;
+    }
+
     /**
      * Initializes speech recognition.
      *
@@ -439,7 +443,7 @@ public class Speech {
     }
 
     private String getPartialResultsAsString() {
-        final StringBuilder out = new StringBuilder("");
+        final StringBuilder out = new StringBuilder();
 
         for (final String partial : mPartialData) {
             out.append(partial).append(" ");
